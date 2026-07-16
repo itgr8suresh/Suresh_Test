@@ -19,7 +19,6 @@
     <header class="bg-gradient-to-r from-indigo-700 to-blue-600 text-white shadow-lg">
         <div class="max-w-6xl mx-auto px-6 py-8">
             <h1 class="text-4xl font-bold">🎓 Training Portal</h1>
-
             <p class="text-blue-100 mt-2">
                 Welcome to your learning dashboard.
             </p>
@@ -49,9 +48,7 @@
 
             </div>
 
-            <!-- Dynamic Courses -->
             <div id="coursesContainer" class="grid md:grid-cols-2 gap-6">
-
             </div>
 
         </div>
@@ -64,111 +61,85 @@
 
     <script>
 
-        //=========================================
-        // Supabase Configuration
-        //=========================================
-
         const SUPABASE_URL = "https://qmtvnahjgassiqwzpswb.supabase.co";
-
         const SUPABASE_ANON_KEY = "sb_publishable_kUj50UAj30OzDYhDH6ydSw_68YW8tuZ";
 
-        const supabase = window.supabase.createClient(
+        // Don't create a variable named "supabase"
+        const { createClient } = window.supabase;
+
+        const client = createClient(
             SUPABASE_URL,
             SUPABASE_ANON_KEY
         );
 
-        //=========================================
-        // Load Batch and Courses
-        //=========================================
-
         async function loadTrainingPortal() {
 
-            // Get first batch
-            const { data: batches, error: batchError } = await supabase
-                .from("batches")
-                .select("*")
-                .order("id")
-                .limit(1);
+            try {
 
-            if (batchError) {
-                console.error(batchError);
-                return;
+                const { data: batches, error: batchError } = await client
+                    .from("batches")
+                    .select("*")
+                    .order("id", { ascending: true })
+                    .limit(1);
+
+                if (batchError) throw batchError;
+
+                if (!batches || batches.length === 0) {
+                    document.getElementById("batchName").textContent = "No Batch Found";
+                    document.getElementById("batchDescription").textContent = "";
+                    return;
+                }
+
+                const batch = batches[0];
+
+                document.getElementById("batchName").textContent = batch.batch_name;
+                document.getElementById("batchDescription").textContent = batch.description || "";
+
+                const { data: courses, error: courseError } = await client
+                    .from("courses")
+                    .select("*")
+                    .eq("batch_id", batch.id)
+                    .order("display_order", { ascending: true });
+
+                if (courseError) throw courseError;
+
+                document.getElementById("courseCount").textContent =
+                    `${courses.length} Courses`;
+
+                const container = document.getElementById("coursesContainer");
+                container.innerHTML = "";
+
+                courses.forEach(course => {
+
+                    container.innerHTML += `
+                        <div class="border rounded-xl p-6 hover:shadow-lg transition bg-slate-50">
+
+                            <h3 class="text-xl font-bold text-gray-800">
+                                ${course.course_name}
+                            </h3>
+
+                            <p class="text-gray-500 mt-2">
+                                ${course.course_description || ""}
+                            </p>
+
+                            <a
+                                href="${course.course_link}"
+                                target="_blank"
+                                class="inline-block mt-5 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
+                                Start Course →
+                            </a>
+
+                        </div>
+                    `;
+
+                });
+
+            } catch (err) {
+                console.error(err);
+
+                document.getElementById("batchName").textContent = "Error loading data";
+                document.getElementById("batchDescription").textContent = err.message;
             }
-
-            if (!batches.length) {
-
-                document.getElementById("batchName").innerHTML =
-                    "No Batch Found";
-
-                return;
-            }
-
-            const batch = batches[0];
-
-            // Batch Details
-
-            document.getElementById("batchName").textContent =
-                batch.batch_name;
-
-            document.getElementById("batchDescription").textContent =
-                batch.description ?? "";
-
-            // Get Courses
-
-            const { data: courses, error: courseError } = await supabase
-                .from("courses")
-                .select("*")
-                .eq("batch_id", batch.id)
-                .order("display_order");
-
-            if (courseError) {
-                console.error(courseError);
-                return;
-            }
-
-            // Course Count
-
-            document.getElementById("courseCount").textContent =
-                `${courses.length} Courses`;
-
-            // Build Cards
-
-            const container = document.getElementById("coursesContainer");
-
-            container.innerHTML = "";
-
-            courses.forEach(course => {
-
-                container.innerHTML += `
-
-                    <div class="border rounded-xl p-6 hover:shadow-lg transition bg-slate-50">
-
-                        <h3 class="text-xl font-bold text-gray-800">
-
-                            ${course.course_name}
-
-                        </h3>
-
-                        <p class="text-gray-500 mt-2">
-
-                            ${course.course_description ?? ""}
-
-                        </p>
-
-                        <a
-                            href="${course.course_link}"
-                            target="_blank"
-                            class="inline-block mt-5 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
-
-                            Start Course →
-
-                        </a>
-
-                    </div>
-
-                `;
-
-            });
 
         }
 
