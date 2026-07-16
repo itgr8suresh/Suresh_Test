@@ -1,126 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Training Portal</title>
 
-  <!-- Tailwind CSS v4 -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Portal</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body class="bg-slate-100">
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-indigo-700 to-blue-600 text-white shadow-lg">
-    <div class="max-w-6xl mx-auto px-6 py-8">
-      <h1 class="text-4xl font-bold">🎓 Training Portal</h1>
-      <p class="text-blue-100 mt-2">
-        Welcome to your learning dashboard.
-      </p>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-indigo-700 to-blue-600 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+            <h1 class="text-4xl font-bold">🎓 Training Portal</h1>
 
-  <!-- Batch -->
-  <main class="max-w-6xl mx-auto px-6 py-10">
+            <p class="text-blue-100 mt-2">
+                Welcome to your learning dashboard.
+            </p>
+        </div>
+    </header>
 
-    <div class="bg-white rounded-2xl shadow-xl p-8">
+    <main class="max-w-6xl mx-auto px-6 py-10">
 
-      <div class="flex justify-between items-center mb-8">
-        <div>
-          <h2 class="text-3xl font-bold text-gray-800">
-            Full Stack Developer Batch - August 2026
-          </h2>
-          <p class="text-gray-500 mt-2">
-            Complete all four trainings to finish this batch.
-          </p>
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+
+            <div class="flex justify-between items-center mb-8">
+
+                <div>
+                    <h2 id="batchName" class="text-3xl font-bold text-gray-800">
+                        Loading...
+                    </h2>
+
+                    <p id="batchDescription" class="text-gray-500 mt-2">
+                        Please wait...
+                    </p>
+                </div>
+
+                <span id="courseCount"
+                    class="bg-green-100 text-green-700 px-4 py-2 rounded-full font-semibold">
+                    0 Courses
+                </span>
+
+            </div>
+
+            <!-- Dynamic Courses -->
+            <div id="coursesContainer" class="grid md:grid-cols-2 gap-6">
+
+            </div>
+
         </div>
 
-        <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full font-semibold">
-          4 Courses
-        </span>
-      </div>
+    </main>
 
-      <!-- Courses -->
-      <div class="grid md:grid-cols-2 gap-6">
+    <footer class="text-center text-gray-500 py-8">
+        © 2026 Training Portal | Powered by GitHub Pages & Supabase
+    </footer>
 
-        <div class="border rounded-xl p-6 hover:shadow-lg transition bg-slate-50">
-          <h3 class="text-xl font-bold text-gray-800">
-            HTML & CSS Fundamentals
-          </h3>
+    <script>
 
-          <p class="text-gray-500 mt-2">
-            Learn the building blocks of modern web development.
-          </p>
+        //=========================================
+        // Supabase Configuration
+        //=========================================
 
-          <a
-            href="https://example.com/courses/html-css"
-            target="_blank"
-            class="inline-block mt-5 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
-            Start Course →
-          </a>
-        </div>
+        const SUPABASE_URL = "https://qmtvnahjgassiqwzpswb.supabase.co";
 
-        <div class="border rounded-xl p-6 hover:shadow-lg transition bg-slate-50">
-          <h3 class="text-xl font-bold text-gray-800">
-            JavaScript Essentials
-          </h3>
+        const SUPABASE_ANON_KEY = "sb_publishable_kUj50UAj30OzDYhDH6ydSw_68YW8tuZ";
 
-          <p class="text-gray-500 mt-2">
-            Learn variables, functions, DOM, and ES6.
-          </p>
+        const supabase = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
 
-          <a
-            href="https://example.com/courses/javascript"
-            target="_blank"
-            class="inline-block mt-5 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
-            Start Course →
-          </a>
-        </div>
+        //=========================================
+        // Load Batch and Courses
+        //=========================================
 
-        <div class="border rounded-xl p-6 hover:shadow-lg transition bg-slate-50">
-          <h3 class="text-xl font-bold text-gray-800">
-            React Development
-          </h3>
+        async function loadTrainingPortal() {
 
-          <p class="text-gray-500 mt-2">
-            Build modern web applications using React.
-          </p>
+            // Get first batch
+            const { data: batches, error: batchError } = await supabase
+                .from("batches")
+                .select("*")
+                .order("id")
+                .limit(1);
 
-          <a
-            href="https://example.com/courses/react"
-            target="_blank"
-            class="inline-block mt-5 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
-            Start Course →
-          </a>
-        </div>
+            if (batchError) {
+                console.error(batchError);
+                return;
+            }
 
-        <div class="border rounded-xl p-6 hover:shadow-lg transition bg-slate-50">
-          <h3 class="text-xl font-bold text-gray-800">
-            Supabase Backend Development
-          </h3>
+            if (!batches.length) {
 
-          <p class="text-gray-500 mt-2">
-            Learn authentication, database, and APIs with Supabase.
-          </p>
+                document.getElementById("batchName").innerHTML =
+                    "No Batch Found";
 
-          <a
-            href="https://example.com/courses/supabase"
-            target="_blank"
-            class="inline-block mt-5 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
-            Start Course →
-          </a>
-        </div>
+                return;
+            }
 
-      </div>
+            const batch = batches[0];
 
-    </div>
+            // Batch Details
 
-  </main>
+            document.getElementById("batchName").textContent =
+                batch.batch_name;
 
-  <footer class="text-center text-gray-500 py-8">
-    © 2026 Training Portal | Powered by GitHub Pages & Supabase
-  </footer>
+            document.getElementById("batchDescription").textContent =
+                batch.description ?? "";
+
+            // Get Courses
+
+            const { data: courses, error: courseError } = await supabase
+                .from("courses")
+                .select("*")
+                .eq("batch_id", batch.id)
+                .order("display_order");
+
+            if (courseError) {
+                console.error(courseError);
+                return;
+            }
+
+            // Course Count
+
+            document.getElementById("courseCount").textContent =
+                `${courses.length} Courses`;
+
+            // Build Cards
+
+            const container = document.getElementById("coursesContainer");
+
+            container.innerHTML = "";
+
+            courses.forEach(course => {
+
+                container.innerHTML += `
+
+                    <div class="border rounded-xl p-6 hover:shadow-lg transition bg-slate-50">
+
+                        <h3 class="text-xl font-bold text-gray-800">
+
+                            ${course.course_name}
+
+                        </h3>
+
+                        <p class="text-gray-500 mt-2">
+
+                            ${course.course_description ?? ""}
+
+                        </p>
+
+                        <a
+                            href="${course.course_link}"
+                            target="_blank"
+                            class="inline-block mt-5 bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition">
+
+                            Start Course →
+
+                        </a>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+        loadTrainingPortal();
+
+    </script>
 
 </body>
+
 </html>
