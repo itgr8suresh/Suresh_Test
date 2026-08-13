@@ -3,312 +3,30 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EduTrain Pro - Training Portal</title>
+    <title>Training Portal</title>
 
-    <!-- ========================================= -->
-    <!-- TAILWIND CSS                              -->
-    <!-- ========================================= -->
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
 
-    <!-- ========================================= -->
-    <!-- TAILWIND CONFIGURATION                    -->
-    <!-- ========================================= -->
-
-    <script id="tailwind-config">
-
-        tailwind.config = {
-
-            darkMode: "class",
-
-            theme: {
-
-                extend: {
-
-                    colors: {
-
-                        "on-secondary-container": "#57657a",
-                        "tertiary-fixed": "#85f8c4",
-                        "on-background": "#1b1b1d",
-                        "surface-container-lowest": "#ffffff",
-                        "error-red": "#be123c",
-                        "inverse-surface": "#303032",
-
-                        "slate-900": "#0f172a",
-                        "slate-50": "#f8fafc",
-                        "slate-200": "#e2e8f0",
-
-                        "primary-fixed": "#d8e3fb",
-                        "background": "#fbf8fa",
-                        "surface": "#fbf8fa",
-
-                        "surface-container-high": "#eae7e9",
-
-                        "on-secondary-fixed": "#0d1c2e",
-                        "on-error": "#ffffff",
-
-                        "secondary-fixed": "#d5e3fc",
-
-                        "on-error-container": "#93000a",
-
-                        "on-surface-variant": "#45474c",
-
-                        "on-tertiary-container": "#24a375",
-
-                        "inverse-primary": "#bcc7de",
-
-                        "primary-fixed-dim": "#bcc7de",
-
-                        "on-primary-fixed": "#111c2d",
-
-                        "surface-dim": "#dcd9db",
-
-                        "on-secondary-fixed-variant": "#3a485b",
-
-                        "on-primary-container": "#8590a6",
-
-                        "slate-700": "#334155",
-
-                        "surface-container-highest": "#e4e2e3",
-
-                        "primary-container": "#1e293b",
-
-                        "on-primary-fixed-variant": "#3c475a",
-
-                        "surface-variant": "#e4e2e3",
-
-                        "on-tertiary-fixed-variant": "#005137",
-
-                        "error-container": "#ffdad6",
-
-                        "on-tertiary": "#ffffff",
-
-                        "outline-variant": "#c5c6cd",
-
-                        "inverse-on-surface": "#f3f0f2",
-
-                        "secondary-fixed-dim": "#b9c7df",
-
-                        "tertiary-fixed-dim": "#68dba9",
-
-                        "tertiary-container": "#00301f",
-
-                        "slate-100": "#f1f5f9",
-
-                        "on-primary": "#ffffff",
-
-                        "surface-container": "#f0edef",
-
-                        "on-tertiary-fixed": "#002114",
-
-                        "primary": "#091426",
-
-                        "on-secondary": "#ffffff",
-
-                        "surface-bright": "#fbf8fa",
-
-                        "tertiary": "#00190e",
-
-                        "error": "#ba1a1a",
-
-                        "outline": "#75777d",
-
-                        "secondary-container": "#d5e3fc",
-
-                        "on-surface": "#1b1b1d"
-                    },
-
-
-                    borderRadius: {
-
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-
-
-                    spacing: {
-
-                        "md": "1.5rem",
-                        "sm": "1rem",
-                        "xs": "0.5rem",
-                        "margin-desktop": "48px",
-                        "xl": "4rem",
-                        "gutter": "24px",
-                        "margin-mobile": "16px",
-                        "unit": "4px",
-                        "lg": "2.5rem"
-                    },
-
-
-                    fontFamily: {
-
-                        "headline-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "display-lg": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "headline-lg-mobile": ["Inter"],
-                        "label-md": ["Inter"],
-                        "label-sm": ["Inter"]
-                    },
-
-
-                    fontSize: {
-
-                        "headline-lg": [
-
-                            "32px",
-
-                            {
-
-                                lineHeight: "1.2",
-                                letterSpacing: "-0.01em",
-                                fontWeight: "700"
-
-                            }
-
-                        ],
-
-
-                        "body-md": [
-
-                            "16px",
-
-                            {
-
-                                lineHeight: "1.6",
-                                fontWeight: "400"
-
-                            }
-
-                        ],
-
-
-                        "display-lg": [
-
-                            "48px",
-
-                            {
-
-                                lineHeight: "1.1",
-                                letterSpacing: "-0.02em",
-                                fontWeight: "700"
-
-                            }
-
-                        ],
-
-
-                        "body-lg": [
-
-                            "18px",
-
-                            {
-
-                                lineHeight: "1.7",
-                                fontWeight: "400"
-
-                            }
-
-                        ],
-
-
-                        "headline-md": [
-
-                            "24px",
-
-                            {
-
-                                lineHeight: "1.3",
-                                fontWeight: "600"
-
-                            }
-
-                        ],
-
-
-                        "headline-lg-mobile": [
-
-                            "24px",
-
-                            {
-
-                                lineHeight: "1.2",
-                                fontWeight: "700"
-
-                            }
-
-                        ],
-
-
-                        "label-md": [
-
-                            "14px",
-
-                            {
-
-                                lineHeight: "1.2",
-                                letterSpacing: "0.01em",
-                                fontWeight: "600"
-
-                            }
-
-                        ],
-
-
-                        "label-sm": [
-
-                            "12px",
-
-                            {
-
-                                lineHeight: "1.1",
-                                letterSpacing: "0.02em",
-                                fontWeight: "700"
-
-                            }
-
-                        ]
-
-                    }
-
-                }
-
-            }
-
-        };
-
-    </script>
-
-
-    <!-- ========================================= -->
-    <!-- GOOGLE FONTS                              -->
-    <!-- ========================================= -->
-
+    <!-- Google Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
 
-    <!-- ========================================= -->
-    <!-- MATERIAL SYMBOLS                          -->
-    <!-- ========================================= -->
-
+    <!-- Material Icons -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0"
         rel="stylesheet">
 
 
-    <!-- ========================================= -->
-    <!-- SUPABASE JS                               -->
-    <!-- ========================================= -->
-
+    <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
@@ -318,12 +36,18 @@
             font-family: 'Inter', sans-serif;
         }
 
+        .modal-backdrop {
+            background: rgba(15, 23, 42, 0.60);
+            backdrop-filter: blur(4px);
+        }
+
         .course-card {
             transition: all 0.2s ease;
         }
 
         .course-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
         }
 
     </style>
@@ -331,97 +55,71 @@
 </head>
 
 
-<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<body class="bg-slate-100 min-h-screen">
 
 
-    <!-- ========================================= -->
-    <!-- HEADER                                    -->
-    <!-- ========================================= -->
+    <!-- ================================================= -->
+    <!-- HEADER                                            -->
+    <!-- ================================================= -->
 
-    <header class="w-full top-0 bg-surface shadow-sm z-50">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
 
         <div
-            class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-[1280px] mx-auto">
+            class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between gap-4">
 
 
-            <!-- Logo -->
-
-            <div class="flex items-center gap-4">
-
-                <span
-                    class="text-headline-md font-headline-md font-bold text-primary">
-
-                    EduTrain Pro
-
-                </span>
-
-            </div>
-
-
-            <!-- Search -->
-
-            <div class="hidden md:flex flex-1 max-w-md mx-8">
-
-                <div class="relative w-full">
-
-                    <span
-                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">
-
-                        search
-
-                    </span>
-
-
-                    <input
-                        id="searchInput"
-                        class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary-fixed-dim transition-all outline-none"
-                        placeholder="Search courses..."
-                        type="text">
-
-                </div>
-
-            </div>
-
-
-            <!-- Header Actions -->
-
-            <div class="flex items-center gap-4">
-
-
-                <button
-                    type="button"
-                    class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container">
-
-                    <span class="material-symbols-outlined">
-
-                        notifications
-
-                    </span>
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container hidden md:block">
-
-                    <span class="material-symbols-outlined">
-
-                        help
-
-                    </span>
-
-                </button>
-
-
-                <!-- User Avatar -->
+            <div class="flex items-center gap-3">
 
                 <div
-                    class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                    class="w-11 h-11 rounded-xl bg-indigo-600 text-white flex items-center justify-center">
 
-                    U
+                    <span class="material-symbols-outlined">
+                        school
+                    </span>
 
                 </div>
+
+                <div>
+
+                    <h1 class="text-xl md:text-2xl font-bold text-slate-900">
+                        Training Portal
+                    </h1>
+
+                    <p class="text-xs md:text-sm text-slate-500">
+                        Training & Course Management
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="flex items-center gap-2">
+
+
+                <button
+                    onclick="loadTrainingPortal()"
+                    title="Refresh"
+                    class="w-10 h-10 rounded-lg border border-slate-200 hover:bg-slate-100 flex items-center justify-center">
+
+                    <span class="material-symbols-outlined">
+                        refresh
+                    </span>
+
+                </button>
+
+
+                <button
+                    onclick="openBatchModal('add')"
+                    class="hidden sm:flex items-center gap-2 bg-indigo-600 text-white px-4 py-2.5 rounded-lg hover:bg-indigo-700">
+
+                    <span class="material-symbols-outlined text-lg">
+                        add
+                    </span>
+
+                    Add Batch
+
+                </button>
 
             </div>
 
@@ -430,82 +128,156 @@
     </header>
 
 
-    <!-- ========================================= -->
-    <!-- MAIN CONTENT                              -->
-    <!-- ========================================= -->
+    <!-- ================================================= -->
+    <!-- MAIN                                              -->
+    <!-- ================================================= -->
 
-    <main
-        class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+    <main class="max-w-7xl mx-auto px-4 md:px-8 py-8">
 
 
-        <!-- ========================================= -->
-        <!-- BATCH HEADER CARD                          -->
-        <!-- ========================================= -->
+        <!-- ================================================= -->
+        <!-- BATCH SELECTOR                                   -->
+        <!-- ================================================= -->
 
-        <div
-            class="bg-surface-container-lowest rounded-[24px] p-6 md:p-8 mb-xl shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-1px_rgba(0,0,0,0.06)] border border-outline-variant/30 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden">
+        <section
+            class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 mb-6">
 
 
             <div
-                class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none">
-            </div>
+                class="flex flex-col lg:flex-row lg:items-end justify-between gap-5">
 
 
-            <!-- Batch Information -->
+                <div class="flex-1">
 
-            <div class="relative z-10">
+                    <label
+                        for="batchSelector"
+                        class="block text-sm font-semibold text-slate-700 mb-2">
 
-                <h1
-                    id="batchName"
-                    class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">
+                        Select Training Batch
 
-                    Loading Training Batch...
-
-                </h1>
+                    </label>
 
 
-                <p
-                    id="batchDescription"
-                    class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    <select
+                        id="batchSelector"
+                        onchange="changeBatch()"
+                        class="w-full lg:max-w-xl px-4 py-3 border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
 
-                    Please wait while we fetch the latest curriculum details.
+                        <option value="">
+                            Loading batches...
+                        </option>
 
-                </p>
-
-            </div>
-
-
-            <!-- Course Count -->
-
-            <div
-                class="relative z-10 flex items-center gap-3 bg-surface-container-low px-4 py-3 rounded-xl border border-outline-variant/50">
-
-
-                <div
-                    class="bg-primary-container p-2 rounded-lg text-on-primary">
-
-                    <span class="material-symbols-outlined">
-
-                        school
-
-                    </span>
+                    </select>
 
                 </div>
 
 
+                <div class="flex flex-wrap gap-2">
+
+
+                    <button
+                        onclick="openBatchModal('add')"
+                        class="flex items-center gap-2 bg-indigo-600 text-white px-4 py-3 rounded-lg hover:bg-indigo-700">
+
+                        <span class="material-symbols-outlined text-lg">
+                            add
+                        </span>
+
+                        Add Batch
+
+                    </button>
+
+
+                    <button
+                        onclick="editCurrentBatch()"
+                        class="flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-200 px-4 py-3 rounded-lg hover:bg-blue-100">
+
+                        <span class="material-symbols-outlined text-lg">
+                            edit
+                        </span>
+
+                        Edit
+
+                    </button>
+
+
+                    <button
+                        onclick="deleteCurrentBatch()"
+                        class="flex items-center gap-2 bg-red-50 text-red-700 border border-red-200 px-4 py-3 rounded-lg hover:bg-red-100">
+
+                        <span class="material-symbols-outlined text-lg">
+                            delete
+                        </span>
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- BATCH DETAILS                                    -->
+        <!-- ================================================= -->
+
+        <section
+            class="bg-gradient-to-r from-indigo-700 to-blue-600 text-white rounded-2xl shadow-lg p-6 md:p-8 mb-8">
+
+
+            <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+
+
                 <div>
 
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 text-sm mb-4">
+
+                        <span
+                            class="w-2 h-2 rounded-full bg-green-300">
+                        </span>
+
+                        Active Batch
+
+                    </div>
+
+
+                    <h2
+                        id="batchName"
+                        class="text-2xl md:text-4xl font-bold">
+
+                        Loading...
+
+                    </h2>
+
+
                     <p
-                        class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+                        id="batchDescription"
+                        class="mt-3 text-blue-100 max-w-3xl">
 
+                        Loading batch information...
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="bg-white/15 rounded-2xl p-5 min-w-[150px]">
+
+
+                    <p class="text-sm text-blue-100">
                         Total Courses
-
                     </p>
 
 
                     <p
                         id="courseCount"
-                        class="font-headline-md text-headline-md text-primary font-bold">
+                        class="text-4xl font-bold mt-1">
 
                         0
 
@@ -515,174 +287,438 @@
 
             </div>
 
-        </div>
+        </section>
 
 
-        <!-- ========================================= -->
-        <!-- ASSIGNED COURSES                          -->
-        <!-- ========================================= -->
+        <!-- ================================================= -->
+        <!-- COURSE HEADER                                    -->
+        <!-- ================================================= -->
 
-        <div class="mb-8">
-
-
-            <h2
-                class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
-
-                <span
-                    class="material-symbols-outlined text-primary">
-
-                    book_2
-
-                </span>
-
-                Assigned Courses
-
-            </h2>
+        <section class="mb-5">
 
 
-            <!-- Course Container -->
+            <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+
+                <div>
+
+                    <h2
+                        class="text-2xl font-bold text-slate-900">
+
+                        Courses
+
+                    </h2>
+
+                    <p
+                        class="text-slate-500 mt-1">
+
+                        Courses assigned to the selected training batch.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="flex flex-wrap gap-2">
+
+
+                    <div
+                        class="relative">
+
+
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+
+                            search
+
+                        </span>
+
+
+                        <input
+                            id="searchInput"
+                            type="text"
+                            placeholder="Search courses..."
+                            class="pl-10 pr-4 py-2.5 border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+
+                    </div>
+
+
+                    <button
+                        onclick="openCourseModal('add')"
+                        class="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2.5 rounded-lg hover:bg-indigo-700">
+
+                        <span class="material-symbols-outlined text-lg">
+                            add
+                        </span>
+
+                        Add Course
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- COURSES                                          -->
+        <!-- ================================================= -->
+
+        <section>
 
             <div
                 id="coursesContainer"
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-
-                <!-- Loading State -->
-
                 <div
-                    id="loadingState"
-                    class="col-span-full py-12 flex flex-col items-center justify-center text-on-surface-variant">
-
+                    class="col-span-full bg-white rounded-2xl border border-slate-200 p-12 text-center">
 
                     <span
-                        class="material-symbols-outlined animate-spin text-4xl mb-4">
+                        class="material-symbols-outlined text-5xl text-slate-300">
 
                         sync
 
                     </span>
 
-
-                    <p
-                        class="font-body-md text-body-md">
-
-                        Connecting to training database...
-
+                    <p class="mt-3 text-slate-500">
+                        Loading courses...
                     </p>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
+
 
     </main>
 
 
-    <!-- ========================================= -->
-    <!-- FOOTER                                    -->
-    <!-- ========================================= -->
+    <!-- ================================================= -->
+    <!-- FOOTER                                            -->
+    <!-- ================================================= -->
 
     <footer
-        class="w-full bottom-0 bg-surface-container-low mt-auto">
+        class="mt-12 bg-white border-t border-slate-200">
 
         <div
-            class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-8 max-w-[1280px] mx-auto gap-4 md:gap-0">
+            class="max-w-7xl mx-auto px-4 md:px-8 py-7 text-center text-sm text-slate-500">
 
-
-            <div
-                class="text-headline-md font-headline-md font-bold text-secondary">
-
-                EduTrain Pro
-
-            </div>
-
-
-            <div
-                class="flex flex-wrap justify-center gap-4 md:gap-6">
-
-
-                <a
-                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">
-
-                    Terms of Service
-
-                </a>
-
-
-                <a
-                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">
-
-                    Privacy Policy
-
-                </a>
-
-
-                <a
-                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">
-
-                    Support
-
-                </a>
-
-
-                <a
-                    class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">
-
-                    Contact
-
-                </a>
-
-            </div>
-
-
-            <div
-                class="font-body-md text-body-md text-secondary">
-
-                © 2026 EduTrain Professional Portal. All rights reserved.
-
-            </div>
+            © 2026 Training Portal | Powered by Supabase
 
         </div>
 
     </footer>
 
 
-    <!-- ========================================= -->
-    <!-- SUPABASE DATABASE INTEGRATION              -->
-    <!-- ========================================= -->
+    <!-- ================================================= -->
+    <!-- BATCH MODAL                                       -->
+    <!-- ================================================= -->
+
+    <div
+        id="batchModal"
+        class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
+
+
+        <div
+            class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
+
+
+            <div
+                class="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
+
+
+                <h3
+                    id="batchModalTitle"
+                    class="text-xl font-bold text-slate-900">
+
+                    Add Batch
+
+                </h3>
+
+
+                <button
+                    onclick="closeBatchModal()"
+                    class="w-9 h-9 rounded-lg hover:bg-slate-100 flex items-center justify-center">
+
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="p-6 space-y-5">
+
+
+                <input
+                    id="batchIdInput"
+                    type="hidden">
+
+
+                <div>
+
+                    <label
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+
+                        Batch Name
+
+                    </label>
+
+
+                    <input
+                        id="batchNameInput"
+                        type="text"
+                        placeholder="Full Stack Developer Batch - August 2026"
+                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+
+                </div>
+
+
+                <div>
+
+                    <label
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+
+                        Description
+
+                    </label>
+
+
+                    <textarea
+                        id="batchDescriptionInput"
+                        rows="4"
+                        placeholder="Complete all four trainings to finish this batch."
+                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="px-6 py-5 bg-slate-50 border-t border-slate-200 flex justify-end gap-3">
+
+
+                <button
+                    onclick="closeBatchModal()"
+                    class="px-5 py-2.5 border border-slate-300 rounded-lg hover:bg-white">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    onclick="saveBatch()"
+                    class="px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+
+                    Save Batch
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- COURSE MODAL                                     -->
+    <!-- ================================================= -->
+
+    <div
+        id="courseModal"
+        class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
+
+
+        <div
+            class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
+
+
+            <div
+                class="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
+
+
+                <h3
+                    id="courseModalTitle"
+                    class="text-xl font-bold text-slate-900">
+
+                    Add Course
+
+                </h3>
+
+
+                <button
+                    onclick="closeCourseModal()"
+                    class="w-9 h-9 rounded-lg hover:bg-slate-100 flex items-center justify-center">
+
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="p-6 space-y-5">
+
+
+                <input
+                    id="courseIdInput"
+                    type="hidden">
+
+
+                <div>
+
+                    <label
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+
+                        Course Name
+
+                    </label>
+
+
+                    <input
+                        id="courseNameInput"
+                        type="text"
+                        placeholder="JavaScript Essentials"
+                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+
+                </div>
+
+
+                <div>
+
+                    <label
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+
+                        Course Description
+
+                    </label>
+
+
+                    <textarea
+                        id="courseDescriptionInput"
+                        rows="4"
+                        placeholder="Learn variables, functions, DOM, and ES6."
+                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+
+                </div>
+
+
+                <div>
+
+                    <label
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+
+                        Course Link
+
+                    </label>
+
+
+                    <input
+                        id="courseLinkInput"
+                        type="url"
+                        placeholder="https://example.com/course"
+                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+
+                </div>
+
+
+                <div>
+
+                    <label
+                        class="block text-sm font-semibold text-slate-700 mb-2">
+
+                        Display Order
+
+                    </label>
+
+
+                    <input
+                        id="courseOrderInput"
+                        type="number"
+                        min="1"
+                        value="1"
+                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="px-6 py-5 bg-slate-50 border-t border-slate-200 flex justify-end gap-3">
+
+
+                <button
+                    onclick="closeCourseModal()"
+                    class="px-5 py-2.5 border border-slate-300 rounded-lg hover:bg-white">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    onclick="saveCourse()"
+                    class="px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+
+                    Save Course
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT                                        -->
+    <!-- ================================================= -->
 
     <script>
 
 
-        /*
-         * ==========================================
-         * SUPABASE CONNECTION
-         * ==========================================
-         *
-         * IMPORTANT:
-         * Replace YOUR_SUPABASE_ANON_KEY below
-         * with your Supabase anon/publishable key.
-         *
-         * DO NOT use the service_role key here.
-         */
-
+        // =================================================
+        // SUPABASE CONFIGURATION
+        // =================================================
 
         const SUPABASE_URL =
             "https://qmtvnahjgassiqwzpswb.supabase.co";
 
+
+        /*
+         * Replace the value below with your
+         * Supabase anon/public key.
+         *
+         * NEVER use your service_role key here.
+         */
 
         const SUPABASE_ANON_KEY =
             "sb_publishable_kUj50UAj30OzDYhDH6ydSw_68YW8tuZ";
 
 
         /*
-         * We use "trainingClient" instead of
-         * "supabase" to avoid the previous
-         * duplicate declaration error.
+         * IMPORTANT:
+         *
+         * We intentionally call this variable
+         * "trainingClient" instead of "supabase".
+         *
+         * This prevents the previous error:
+         *
+         * Identifier 'supabase' has already been declared
          */
 
         const trainingClient =
@@ -692,214 +728,78 @@
             );
 
 
-        /*
-         * ==========================================
-         * GET PAGE ELEMENTS
-         * ==========================================
-         */
+        // =================================================
+        // APPLICATION STATE
+        // =================================================
 
-        const batchNameElement =
-            document.getElementById("batchName");
+        let batches = [];
 
+        let currentBatch = null;
 
-        const batchDescriptionElement =
-            document.getElementById("batchDescription");
+        let courses = [];
 
 
-        const courseCountElement =
-            document.getElementById("courseCount");
+        // =================================================
+        // INITIAL LOAD
+        // =================================================
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                loadTrainingPortal();
+
+            }
+        );
 
 
-        const coursesContainer =
-            document.getElementById("coursesContainer");
-
-
-        const searchInput =
-            document.getElementById("searchInput");
-
-
-        /*
-         * ==========================================
-         * LOAD TRAINING PORTAL
-         * ==========================================
-         */
+        // =================================================
+        // LOAD BATCHES
+        // =================================================
 
         async function loadTrainingPortal() {
 
             try {
 
-
-                /*
-                 * ======================================
-                 * LOAD BATCH
-                 * ======================================
-                 */
-
                 const {
-                    data: batches,
-                    error: batchError
+                    data,
+                    error
                 } = await trainingClient
 
                     .from("batches")
 
-                    .select("*")
-
-                    .order("id", {
-                        ascending: false
-                    })
-
-                    .limit(1);
-
-
-                /*
-                 * Batch Error
-                 */
-
-                if (batchError) {
-
-                    console.error(
-                        "BATCH ERROR:",
-                        batchError
-                    );
-
-
-                    showError(
-                        "Unable to load training batch",
-                        batchError.message
-                    );
-
-
-                    return;
-
-                }
-
-
-                /*
-                 * No Batch
-                 */
-
-                if (
-                    !batches ||
-                    batches.length === 0
-                ) {
-
-                    batchNameElement.textContent =
-                        "No Batch Found";
-
-
-                    batchDescriptionElement.textContent =
-                        "No training batch is currently available.";
-
-
-                    courseCountElement.textContent =
-                        "0";
-
-
-                    coursesContainer.innerHTML = `
-
-                        <div
-                            class="col-span-full bg-surface-container-low rounded-xl p-10 text-center">
-
-                            <span
-                                class="material-symbols-outlined text-5xl text-on-surface-variant mb-4">
-
-                                school
-
-                            </span>
-
-
-                            <h3
-                                class="font-headline-md text-headline-md text-on-surface mb-2">
-
-                                No Training Batch Found
-
-                            </h3>
-
-
-                            <p
-                                class="font-body-md text-body-md text-on-surface-variant">
-
-                                Please add a batch to your Supabase database.
-
-                            </p>
-
-                        </div>
-
-                    `;
-
-
-                    return;
-
-                }
-
-
-                /*
-                 * Get first/latest batch
-                 */
-
-                const batch =
-                    batches[0];
-
-
-                /*
-                 * Display batch
-                 */
-
-                batchNameElement.textContent =
-                    batch.batch_name ||
-                    "Training Batch";
-
-
-                batchDescriptionElement.textContent =
-                    batch.description ||
-                    "Complete the assigned courses to finish this training batch.";
-
-
-                /*
-                 * ======================================
-                 * LOAD COURSES
-                 * ======================================
-                 */
-
-                const {
-                    data: courses,
-                    error: courseError
-                } = await trainingClient
-
-                    .from("courses")
-
-                    .select("*")
-
-                    .eq(
-                        "batch_id",
-                        batch.id
+                    .select(
+                        "id,batch_name,description,created_at"
                     )
 
                     .order(
-                        "display_order",
+                        "id",
                         {
                             ascending: true
                         }
                     );
 
 
-                /*
-                 * Course Error
-                 */
+                if (error) {
 
-                if (courseError) {
+                    throw error;
 
-                    console.error(
-                        "COURSE ERROR:",
-                        courseError
-                    );
+                }
 
 
-                    showError(
-                        "Unable to load courses",
-                        courseError.message
-                    );
+                batches = data || [];
 
+
+                populateBatchSelector();
+
+
+                if (
+                    batches.length === 0
+                ) {
+
+                    currentBatch = null;
+
+                    showNoBatch();
 
                     return;
 
@@ -907,36 +807,58 @@
 
 
                 /*
-                 * Update Course Count
+                 * Keep selected batch where possible.
                  */
 
-                courseCountElement.textContent =
-                    courses
-                        ? courses.length
-                        : 0;
+                const selector =
+                    document.getElementById(
+                        "batchSelector"
+                    );
 
 
-                /*
-                 * Display Courses
-                 */
+                let selectedId =
+                    selector.value;
 
-                renderCourses(
-                    courses || []
-                );
 
+                let selectedBatch =
+                    batches.find(
+                        batch =>
+                            String(batch.id) ===
+                            String(selectedId)
+                    );
+
+
+                if (
+                    !selectedBatch
+                ) {
+
+                    selectedBatch =
+                        batches[0];
+
+                }
+
+
+                currentBatch =
+                    selectedBatch;
+
+
+                selector.value =
+                    currentBatch.id;
+
+
+                await loadCourses();
 
             }
 
             catch (error) {
 
                 console.error(
-                    "UNEXPECTED ERROR:",
+                    "LOAD BATCH ERROR:",
                     error
                 );
 
 
                 showError(
-                    "Unable to connect to training database",
                     error.message
                 );
 
@@ -945,52 +867,114 @@
         }
 
 
-        /*
-         * ==========================================
-         * RENDER COURSE CARDS
-         * ==========================================
-         */
+        // =================================================
+        // POPULATE BATCH DROPDOWN
+        // =================================================
 
-        function renderCourses(courses) {
+        function populateBatchSelector() {
+
+            const selector =
+                document.getElementById(
+                    "batchSelector"
+                );
+
+
+            selector.innerHTML = "";
 
 
             if (
-                !courses ||
-                courses.length === 0
+                batches.length === 0
             ) {
 
-                coursesContainer.innerHTML = `
+                selector.innerHTML = `
 
-                    <div
-                        class="col-span-full bg-surface-container-low rounded-xl p-10 text-center">
-
-                        <span
-                            class="material-symbols-outlined text-5xl text-on-surface-variant mb-4">
-
-                            menu_book
-
-                        </span>
-
-
-                        <h3
-                            class="font-headline-md text-headline-md text-on-surface mb-2">
-
-                            No Courses Assigned
-
-                        </h3>
-
-
-                        <p
-                            class="font-body-md text-body-md text-on-surface-variant">
-
-                            There are currently no courses assigned to this batch.
-
-                        </p>
-
-                    </div>
+                    <option value="">
+                        No batches found
+                    </option>
 
                 `;
 
+                return;
+
+            }
+
+
+            batches.forEach(
+                function (batch) {
+
+                    const option =
+                        document.createElement(
+                            "option"
+                        );
+
+
+                    option.value =
+                        batch.id;
+
+
+                    option.textContent =
+                        batch.batch_name;
+
+
+                    selector.appendChild(
+                        option
+                    );
+
+                }
+            );
+
+        }
+
+
+        // =================================================
+        // CHANGE BATCH
+        // =================================================
+
+        async function changeBatch() {
+
+            const selector =
+                document.getElementById(
+                    "batchSelector"
+                );
+
+
+            const selectedId =
+                selector.value;
+
+
+            currentBatch =
+                batches.find(
+                    batch =>
+                        String(batch.id) ===
+                        String(selectedId)
+                );
+
+
+            if (
+                !currentBatch
+            ) {
+
+                return;
+
+            }
+
+
+            await loadCourses();
+
+        }
+
+
+        // =================================================
+        // LOAD COURSES
+        // =================================================
+
+        async function loadCourses() {
+
+            if (
+                !currentBatch
+            ) {
+
+                showNoBatch();
 
                 return;
 
@@ -998,191 +982,253 @@
 
 
             /*
-             * Clear Loading State
+             * Update batch information.
              */
 
-            coursesContainer.innerHTML = "";
+            document.getElementById(
+                "batchName"
+            ).textContent =
+                currentBatch.batch_name;
+
+
+            document.getElementById(
+                "batchDescription"
+            ).textContent =
+                currentBatch.description ||
+                "No description available.";
 
 
             /*
-             * Create each course
+             * Get courses belonging
+             * to this batch.
              */
 
-            courses.forEach(
-                function(course) {
+            const {
+                data,
+                error
+            } = await trainingClient
+
+                .from("courses")
+
+                .select(
+                    "id,batch_id,course_name,course_description,course_link,display_order"
+                )
+
+                .eq(
+                    "batch_id",
+                    currentBatch.id
+                )
+
+                .order(
+                    "display_order",
+                    {
+                        ascending: true
+                    }
+                );
 
 
-                    const card =
-                        document.createElement("div");
+            if (error) {
+
+                throw error;
+
+            }
 
 
-                    card.className =
-                        "course-card bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/40 shadow-sm hover:shadow-lg flex flex-col";
+            courses =
+                data || [];
 
 
-                    /*
-                     * Course Icon
-                     */
-
-                    const iconContainer =
-                        document.createElement("div");
+            document.getElementById(
+                "courseCount"
+            ).textContent =
+                courses.length;
 
 
-                    iconContainer.className =
-                        "w-12 h-12 bg-primary-container rounded-xl flex items-center justify-center text-on-primary mb-5";
+            renderCourses(
+                courses
+            );
+
+        }
 
 
-                    iconContainer.innerHTML = `
+        // =================================================
+        // RENDER COURSES
+        // =================================================
 
-                        <span class="material-symbols-outlined">
+        function renderCourses(
+            courseList
+        ) {
+
+            const container =
+                document.getElementById(
+                    "coursesContainer"
+                );
+
+
+            container.innerHTML = "";
+
+
+            if (
+                courseList.length === 0
+            ) {
+
+                container.innerHTML = `
+
+                    <div
+                        class="col-span-full bg-white border border-slate-200 rounded-2xl p-12 text-center">
+
+                        <span
+                            class="material-symbols-outlined text-6xl text-slate-300">
 
                             menu_book
 
                         </span>
 
+                        <h3
+                            class="text-xl font-bold text-slate-800 mt-4">
+
+                            No Courses Found
+
+                        </h3>
+
+                        <p
+                            class="text-slate-500 mt-2">
+
+                            Add a course to this batch.
+
+                        </p>
+
+                        <button
+                            onclick="openCourseModal('add')"
+                            class="mt-5 px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+
+                            Add Course
+
+                        </button>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            courseList.forEach(
+                function (course) {
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    card.className =
+                        "course-card bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col";
+
+
+                    card.innerHTML = `
+
+                        <div
+                            class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-5">
+
+                            <span class="material-symbols-outlined">
+
+                                menu_book
+
+                            </span>
+
+                        </div>
+
+
+                        <h3
+                            class="text-xl font-bold text-slate-900">
+
+                            ${escapeHTML(
+                                course.course_name
+                            )}
+
+                        </h3>
+
+
+                        <p
+                            class="text-slate-500 mt-3 flex-grow">
+
+                            ${escapeHTML(
+                                course.course_description || ""
+                            )}
+
+                        </p>
+
+
+                        <div
+                            class="flex items-center gap-2 mt-5">
+
+                            <a
+                                href="${escapeAttribute(
+                                    course.course_link
+                                )}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+
+                                Start Course
+
+                                <span
+                                    class="material-symbols-outlined text-lg">
+
+                                    arrow_forward
+
+                                </span>
+
+                            </a>
+
+
+                            <button
+                                onclick="openCourseModal('edit', ${course.id})"
+                                title="Edit Course"
+                                class="w-11 h-11 rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 flex items-center justify-center">
+
+                                <span
+                                    class="material-symbols-outlined">
+
+                                    edit
+
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                onclick="deleteCourse(${course.id})"
+                                title="Delete Course"
+                                class="w-11 h-11 rounded-lg bg-red-50 text-red-700 hover:bg-red-100 flex items-center justify-center">
+
+                                <span
+                                    class="material-symbols-outlined">
+
+                                    delete
+
+                                </span>
+
+                            </button>
+
+                        </div>
+
+
+                        <div
+                            class="mt-4 text-xs text-slate-400">
+
+                            Display Order:
+                            ${course.display_order ?? 1}
+
+                        </div>
+
                     `;
 
 
-                    /*
-                     * Course Name
-                     */
-
-                    const title =
-                        document.createElement("h3");
-
-
-                    title.className =
-                        "text-xl font-bold text-on-surface mb-3";
-
-
-                    title.textContent =
-                        course.course_name ||
-                        "Untitled Course";
-
-
-                    /*
-                     * Course Description
-                     */
-
-                    const description =
-                        document.createElement("p");
-
-
-                    description.className =
-                        "font-body-md text-body-md text-on-surface-variant flex-grow";
-
-
-                    description.textContent =
-                        course.course_description ||
-                        "No course description available.";
-
-
-                    /*
-                     * Start Course Button
-                     */
-
-                    const button =
-                        document.createElement("a");
-
-
-                    button.className =
-                        "inline-flex items-center justify-center gap-2 mt-6 px-5 py-3 bg-primary text-on-primary rounded-lg font-semibold hover:opacity-90 transition-all";
-
-
-                    button.textContent =
-                        "Start Course";
-
-
-                    if (
-                        course.course_link
-                    ) {
-
-                        button.href =
-                            course.course_link;
-
-
-                        button.target =
-                            "_blank";
-
-
-                        button.rel =
-                            "noopener noreferrer";
-
-
-                    } else {
-
-
-                        button.href =
-                            "#";
-
-
-                        button.addEventListener(
-                            "click",
-                            function(event) {
-
-                                event.preventDefault();
-
-
-                                alert(
-                                    "Course link is not available."
-                                );
-
-                            }
-                        );
-
-                    }
-
-
-                    /*
-                     * Arrow Icon
-                     */
-
-                    const arrow =
-                        document.createElement("span");
-
-
-                    arrow.className =
-                        "material-symbols-outlined text-lg";
-
-
-                    arrow.textContent =
-                        "arrow_forward";
-
-
-                    button.appendChild(
-                        arrow
-                    );
-
-
-                    /*
-                     * Add Elements to Card
-                     */
-
-                    card.appendChild(
-                        iconContainer
-                    );
-
-
-                    card.appendChild(
-                        title
-                    );
-
-
-                    card.appendChild(
-                        description
-                    );
-
-
-                    card.appendChild(
-                        button
-                    );
-
-
-                    /*
-                     * Add Card to Page
-                     */
-
-                    coursesContainer.appendChild(
+                    container.appendChild(
                         card
                     );
 
@@ -1192,78 +1238,1092 @@
         }
 
 
-        /*
-         * ==========================================
-         * ERROR MESSAGE
-         * ==========================================
-         */
+        // =================================================
+        // SEARCH COURSES
+        // =================================================
+
+        document
+            .getElementById(
+                "searchInput"
+            )
+            .addEventListener(
+                "input",
+                function () {
+
+                    const search =
+                        this.value
+                            .toLowerCase()
+                            .trim();
+
+
+                    if (
+                        !search
+                    ) {
+
+                        renderCourses(
+                            courses
+                        );
+
+                        return;
+
+                    }
+
+
+                    const filtered =
+                        courses.filter(
+                            function (course) {
+
+                                return (
+
+                                    (
+                                        course.course_name ||
+                                        ""
+                                    )
+                                        .toLowerCase()
+                                        .includes(search)
+
+                                    ||
+
+                                    (
+                                        course.course_description ||
+                                        ""
+                                    )
+                                        .toLowerCase()
+                                        .includes(search)
+
+                                );
+
+                            }
+                        );
+
+
+                    renderCourses(
+                        filtered
+                    );
+
+                }
+            );
+
+
+        // =================================================
+        // OPEN BATCH MODAL
+        // =================================================
+
+        function openBatchModal(
+            mode,
+            batch = null
+        ) {
+
+            const modal =
+                document.getElementById(
+                    "batchModal"
+                );
+
+
+            const title =
+                document.getElementById(
+                    "batchModalTitle"
+                );
+
+
+            const idInput =
+                document.getElementById(
+                    "batchIdInput"
+                );
+
+
+            const nameInput =
+                document.getElementById(
+                    "batchNameInput"
+                );
+
+
+            const descriptionInput =
+                document.getElementById(
+                    "batchDescriptionInput"
+                );
+
+
+            if (
+                mode === "edit" &&
+                batch
+            ) {
+
+                title.textContent =
+                    "Edit Batch";
+
+
+                idInput.value =
+                    batch.id;
+
+
+                nameInput.value =
+                    batch.batch_name || "";
+
+
+                descriptionInput.value =
+                    batch.description || "";
+
+            }
+
+            else {
+
+                title.textContent =
+                    "Add Batch";
+
+
+                idInput.value =
+                    "";
+
+
+                nameInput.value =
+                    "";
+
+
+                descriptionInput.value =
+                    "";
+
+            }
+
+
+            modal.classList.remove(
+                "hidden"
+            );
+
+
+            modal.classList.add(
+                "flex"
+            );
+
+        }
+
+
+        // =================================================
+        // EDIT CURRENT BATCH
+        // =================================================
+
+        function editCurrentBatch() {
+
+            if (
+                !currentBatch
+            ) {
+
+                alert(
+                    "Please select a batch first."
+                );
+
+                return;
+
+            }
+
+
+            openBatchModal(
+                "edit",
+                currentBatch
+            );
+
+        }
+
+
+        // =================================================
+        // CLOSE BATCH MODAL
+        // =================================================
+
+        function closeBatchModal() {
+
+            const modal =
+                document.getElementById(
+                    "batchModal"
+                );
+
+
+            modal.classList.add(
+                "hidden"
+            );
+
+
+            modal.classList.remove(
+                "flex"
+            );
+
+        }
+
+
+        // =================================================
+        // SAVE BATCH
+        // =================================================
+
+        async function saveBatch() {
+
+            const id =
+                document.getElementById(
+                    "batchIdInput"
+                ).value;
+
+
+            const batchName =
+                document.getElementById(
+                    "batchNameInput"
+                ).value.trim();
+
+
+            const description =
+                document.getElementById(
+                    "batchDescriptionInput"
+                ).value.trim();
+
+
+            if (
+                !batchName
+            ) {
+
+                alert(
+                    "Batch name is required."
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                let result;
+
+
+                if (
+                    id
+                ) {
+
+                    /*
+                     * UPDATE
+                     */
+
+                    result =
+                        await trainingClient
+
+                            .from("batches")
+
+                            .update({
+
+                                batch_name:
+                                    batchName,
+
+                                description:
+                                    description || null
+
+                            })
+
+                            .eq(
+                                "id",
+                                id
+                            );
+
+                }
+
+                else {
+
+                    /*
+                     * INSERT
+                     */
+
+                    result =
+                        await trainingClient
+
+                            .from("batches")
+
+                            .insert({
+
+                                batch_name:
+                                    batchName,
+
+                                description:
+                                    description || null
+
+                            });
+
+                }
+
+
+                if (
+                    result.error
+                ) {
+
+                    throw result.error;
+
+                }
+
+
+                closeBatchModal();
+
+
+                alert(
+                    id
+                        ? "Batch updated successfully."
+                        : "Batch added successfully."
+                );
+
+
+                await loadTrainingPortal();
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "SAVE BATCH ERROR:",
+                    error
+                );
+
+
+                alert(
+                    "Unable to save batch.\n\n" +
+                    error.message
+                );
+
+            }
+
+        }
+
+
+        // =================================================
+        // DELETE BATCH
+        // =================================================
+
+        async function deleteCurrentBatch() {
+
+            if (
+                !currentBatch
+            ) {
+
+                alert(
+                    "Please select a batch first."
+                );
+
+                return;
+
+            }
+
+
+            const confirmed =
+                confirm(
+
+                    "Delete this batch?\n\n" +
+
+                    currentBatch.batch_name +
+
+                    "\n\n" +
+
+                    "All courses assigned to this batch will also be deleted."
+
+                );
+
+
+            if (
+                !confirmed
+            ) {
+
+                return;
+
+            }
+
+
+            try {
+
+
+                /*
+                 * Delete courses first.
+                 *
+                 * This works with your current
+                 * foreign key definition.
+                 */
+
+                const courseDelete =
+                    await trainingClient
+
+                        .from("courses")
+
+                        .delete()
+
+                        .eq(
+                            "batch_id",
+                            currentBatch.id
+                        );
+
+
+                if (
+                    courseDelete.error
+                ) {
+
+                    throw courseDelete.error;
+
+                }
+
+
+                /*
+                 * Delete batch.
+                 */
+
+                const batchDelete =
+                    await trainingClient
+
+                        .from("batches")
+
+                        .delete()
+
+                        .eq(
+                            "id",
+                            currentBatch.id
+                        );
+
+
+                if (
+                    batchDelete.error
+                ) {
+
+                    throw batchDelete.error;
+
+                }
+
+
+                alert(
+                    "Batch deleted successfully."
+                );
+
+
+                currentBatch =
+                    null;
+
+
+                await loadTrainingPortal();
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "DELETE BATCH ERROR:",
+                    error
+                );
+
+
+                alert(
+                    "Unable to delete batch.\n\n" +
+                    error.message
+                );
+
+            }
+
+        }
+
+
+        // =================================================
+        // OPEN COURSE MODAL
+        // =================================================
+
+        function openCourseModal(
+            mode,
+            courseId = null
+        ) {
+
+            if (
+                !currentBatch
+            ) {
+
+                alert(
+                    "Please select a batch first."
+                );
+
+                return;
+
+            }
+
+
+            const modal =
+                document.getElementById(
+                    "courseModal"
+                );
+
+
+            const title =
+                document.getElementById(
+                    "courseModalTitle"
+                );
+
+
+            const idInput =
+                document.getElementById(
+                    "courseIdInput"
+                );
+
+
+            const nameInput =
+                document.getElementById(
+                    "courseNameInput"
+                );
+
+
+            const descriptionInput =
+                document.getElementById(
+                    "courseDescriptionInput"
+                );
+
+
+            const linkInput =
+                document.getElementById(
+                    "courseLinkInput"
+                );
+
+
+            const orderInput =
+                document.getElementById(
+                    "courseOrderInput"
+                );
+
+
+            if (
+                mode === "edit"
+            ) {
+
+                const course =
+                    courses.find(
+                        item =>
+                            String(item.id) ===
+                            String(courseId)
+                    );
+
+
+                if (
+                    !course
+                ) {
+
+                    alert(
+                        "Course could not be found."
+                    );
+
+                    return;
+
+                }
+
+
+                title.textContent =
+                    "Edit Course";
+
+
+                idInput.value =
+                    course.id;
+
+
+                nameInput.value =
+                    course.course_name || "";
+
+
+                descriptionInput.value =
+                    course.course_description || "";
+
+
+                linkInput.value =
+                    course.course_link || "";
+
+
+                orderInput.value =
+                    course.display_order || 1;
+
+            }
+
+            else {
+
+                title.textContent =
+                    "Add Course";
+
+
+                idInput.value =
+                    "";
+
+
+                nameInput.value =
+                    "";
+
+
+                descriptionInput.value =
+                    "";
+
+
+                linkInput.value =
+                    "";
+
+
+                orderInput.value =
+                    courses.length + 1;
+
+            }
+
+
+            modal.classList.remove(
+                "hidden"
+            );
+
+
+            modal.classList.add(
+                "flex"
+            );
+
+        }
+
+
+        // =================================================
+        // CLOSE COURSE MODAL
+        // =================================================
+
+        function closeCourseModal() {
+
+            const modal =
+                document.getElementById(
+                    "courseModal"
+                );
+
+
+            modal.classList.add(
+                "hidden"
+            );
+
+
+            modal.classList.remove(
+                "flex"
+            );
+
+        }
+
+
+        // =================================================
+        // SAVE COURSE
+        // =================================================
+
+        async function saveCourse() {
+
+            if (
+                !currentBatch
+            ) {
+
+                alert(
+                    "Please select a batch first."
+                );
+
+                return;
+
+            }
+
+
+            const id =
+                document.getElementById(
+                    "courseIdInput"
+                ).value;
+
+
+            const courseName =
+                document.getElementById(
+                    "courseNameInput"
+                ).value.trim();
+
+
+            const courseDescription =
+                document.getElementById(
+                    "courseDescriptionInput"
+                ).value.trim();
+
+
+            const courseLink =
+                document.getElementById(
+                    "courseLinkInput"
+                ).value.trim();
+
+
+            const displayOrder =
+                parseInt(
+                    document.getElementById(
+                        "courseOrderInput"
+                    ).value,
+                    10
+                ) || 1;
+
+
+            if (
+                !courseName
+            ) {
+
+                alert(
+                    "Course name is required."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                !courseLink
+            ) {
+
+                alert(
+                    "Course link is required."
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                let result;
+
+
+                if (
+                    id
+                ) {
+
+                    /*
+                     * UPDATE COURSE
+                     */
+
+                    result =
+                        await trainingClient
+
+                            .from("courses")
+
+                            .update({
+
+                                course_name:
+                                    courseName,
+
+                                course_description:
+                                    courseDescription || null,
+
+                                course_link:
+                                    courseLink,
+
+                                display_order:
+                                    displayOrder
+
+                            })
+
+                            .eq(
+                                "id",
+                                id
+                            );
+
+                }
+
+                else {
+
+                    /*
+                     * INSERT COURSE
+                     */
+
+                    result =
+                        await trainingClient
+
+                            .from("courses")
+
+                            .insert({
+
+                                batch_id:
+                                    currentBatch.id,
+
+                                course_name:
+                                    courseName,
+
+                                course_description:
+                                    courseDescription || null,
+
+                                course_link:
+                                    courseLink,
+
+                                display_order:
+                                    displayOrder
+
+                            });
+
+                }
+
+
+                if (
+                    result.error
+                ) {
+
+                    throw result.error;
+
+                }
+
+
+                closeCourseModal();
+
+
+                alert(
+                    id
+                        ? "Course updated successfully."
+                        : "Course added successfully."
+                );
+
+
+                await loadCourses();
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "SAVE COURSE ERROR:",
+                    error
+                );
+
+
+                alert(
+                    "Unable to save course.\n\n" +
+                    error.message
+                );
+
+            }
+
+        }
+
+
+        // =================================================
+        // DELETE COURSE
+        // =================================================
+
+        async function deleteCourse(
+            courseId
+        ) {
+
+            const course =
+                courses.find(
+                    item =>
+                        String(item.id) ===
+                        String(courseId)
+                );
+
+
+            if (
+                !course
+            ) {
+
+                return;
+
+            }
+
+
+            const confirmed =
+                confirm(
+
+                    "Delete this course?\n\n" +
+
+                    course.course_name
+
+                );
+
+
+            if (
+                !confirmed
+            ) {
+
+                return;
+
+            }
+
+
+            try {
+
+
+                const {
+                    error
+                } = await trainingClient
+
+                    .from("courses")
+
+                    .delete()
+
+                    .eq(
+                        "id",
+                        courseId
+                    );
+
+
+                if (
+                    error
+                ) {
+
+                    throw error;
+
+                }
+
+
+                alert(
+                    "Course deleted successfully."
+                );
+
+
+                await loadCourses();
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "DELETE COURSE ERROR:",
+                    error
+                );
+
+
+                alert(
+                    "Unable to delete course.\n\n" +
+                    error.message
+                );
+
+            }
+
+        }
+
+
+        // =================================================
+        // NO BATCH
+        // =================================================
+
+        function showNoBatch() {
+
+
+            document.getElementById(
+                "batchName"
+            ).textContent =
+                "No Training Batch";
+
+
+            document.getElementById(
+                "batchDescription"
+            ).textContent =
+                "Create your first batch using the Add Batch button.";
+
+
+            document.getElementById(
+                "courseCount"
+            ).textContent =
+                "0";
+
+
+            document.getElementById(
+                "coursesContainer"
+            ).innerHTML = `
+
+                <div
+                    class="col-span-full bg-white border border-slate-200 rounded-2xl p-12 text-center">
+
+                    <span
+                        class="material-symbols-outlined text-6xl text-slate-300">
+
+                        school
+
+                    </span>
+
+
+                    <h3
+                        class="text-xl font-bold text-slate-800 mt-4">
+
+                        No Batches Found
+
+                    </h3>
+
+
+                    <p
+                        class="text-slate-500 mt-2">
+
+                        Create your first training batch.
+
+                    </p>
+
+
+                    <button
+                        onclick="openBatchModal('add')"
+                        class="mt-5 bg-indigo-600 text-white px-5 py-3 rounded-lg hover:bg-indigo-700">
+
+                        Add Batch
+
+                    </button>
+
+                </div>
+
+            `;
+
+        }
+
+
+        // =================================================
+        // ERROR DISPLAY
+        // =================================================
 
         function showError(
-            title,
             message
         ) {
 
 
-            batchNameElement.textContent =
-                "Training Portal";
+            document.getElementById(
+                "batchName"
+            ).textContent =
+                "Database Error";
 
 
-            batchDescriptionElement.textContent =
-                title;
+            document.getElementById(
+                "batchDescription"
+            ).textContent =
+                message;
 
 
-            courseCountElement.textContent =
+            document.getElementById(
+                "courseCount"
+            ).textContent =
                 "0";
 
 
-            coursesContainer.innerHTML = `
+            document.getElementById(
+                "coursesContainer"
+            ).innerHTML = `
 
                 <div
-                    class="col-span-full bg-red-50 border border-red-200 rounded-xl p-8">
+                    class="col-span-full bg-red-50 border border-red-200 rounded-2xl p-8">
 
                     <div
-                        class="flex items-start gap-4">
+                        class="flex gap-4">
 
+                        <span
+                            class="material-symbols-outlined text-red-600 text-4xl">
 
-                        <div
-                            class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            error
 
-                            <span
-                                class="material-symbols-outlined text-error-red">
-
-                                error
-
-                            </span>
-
-                        </div>
+                        </span>
 
 
                         <div>
 
                             <h3
-                                class="font-headline-md text-headline-md text-error-red mb-2">
+                                class="text-lg font-bold text-red-700">
 
-                                ${escapeHtml(title)}
+                                Unable to load database data
 
                             </h3>
 
 
                             <p
-                                class="font-body-md text-body-md text-on-surface-variant">
+                                class="text-red-600 mt-2">
 
-                                ${escapeHtml(
-                                    message ||
-                                    "Unknown error"
-                                )}
+                                ${escapeHTML(message)}
 
                             </p>
 
 
                             <p
-                                class="font-body-md text-body-md text-on-surface-variant mt-4">
+                                class="text-sm text-slate-600 mt-4">
 
-                                Please check your Supabase URL,
-                                anon key, table names and RLS policies.
+                                Check your Supabase URL,
+                                anon key and RLS policies.
 
                             </p>
 
@@ -1278,15 +2338,17 @@
         }
 
 
-        /*
-         * ==========================================
-         * HTML ESCAPE
-         * ==========================================
-         */
+        // =================================================
+        // HTML SECURITY HELPERS
+        // =================================================
 
-        function escapeHtml(value) {
+        function escapeHTML(
+            value
+        ) {
 
-            return String(value)
+            return String(
+                value ?? ""
+            )
 
                 .replace(
                     /&/g,
@@ -1316,75 +2378,26 @@
         }
 
 
-        /*
-         * ==========================================
-         * COURSE SEARCH
-         * ==========================================
-         */
+        function escapeAttribute(
+            value
+        ) {
 
-        if (searchInput) {
-
-            searchInput.addEventListener(
-                "input",
-                function() {
-
-
-                    const searchText =
-                        searchInput.value
-                            .toLowerCase()
-                            .trim();
-
-
-                    const cards =
-                        document.querySelectorAll(
-                            ".course-card"
-                        );
-
-
-                    cards.forEach(
-                        function(card) {
-
-
-                            const text =
-                                card.textContent
-                                    .toLowerCase();
-
-
-                            if (
-                                searchText === "" ||
-                                text.includes(searchText)
-                            ) {
-
-                                card.style.display =
-                                    "";
-
-
-                            } else {
-
-                                card.style.display =
-                                    "none";
-
-                            }
-
-                        }
-                    );
-
-                }
-            );
+            return String(
+                value ?? ""
+            )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
 
         }
 
-
-        /*
-         * ==========================================
-         * START APPLICATION
-         * ==========================================
-         */
-
-        loadTrainingPortal();
-
-
     </script>
+
 
 </body>
 
